@@ -1,8 +1,12 @@
 {
   "packageDirectories": [
     {
-      "path": "fflib-source",
+      "path": "force-app",
       "default": true
+    },
+    {
+      "path": "fflib-source",
+      "default": false
     }
   ],
   "name": "fflib",
