@@ -1,0 +1,12 @@
+{
+  "packageDirectories": [
+    {
+      "path": "fflib-source",
+      "default": true
+    }
+  ],
+  "name": "fflib",
+  "namespace": "",
+  "sfdcLoginUrl": "https://login.salesforce.com",
+  "sourceApiVersion": "62.0"
+}
