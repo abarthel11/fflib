@@ -1,7 +1,7 @@
 {
   "packageDirectories": [
     {
-      "path": "fflib-source",
+      "path": "custom-source",
       "default": true
     }
   ],
