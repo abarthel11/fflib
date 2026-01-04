@@ -14,7 +14,7 @@
     "prettier:verify": "prettier --check \"**/*.{cls,cmp,component,css,html,js,json,md,page,trigger,xml,yaml,yml}\"",
     "postinstall": "husky install",
     "precommit": "lint-staged",
-    "scratch:create": "sf org create scratch --definition-file config/project-scratch-def.json --duration-days 7 --set-default --alias",
+    "scratch:create": "sf org create scratch --definition-file config/project-scratch-def.json --duration-days 7 --set-default --alias \"scratch-org\" && sf config set target-org=scratch-org",
     "scratch:delete": "sf org delete scratch --target-org"
   },
   "devDependencies": {
