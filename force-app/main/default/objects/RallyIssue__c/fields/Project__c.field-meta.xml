@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Project__c</fullName>
+    <deleteConstraint>Restrict</deleteConstraint>
+    <description>Parent project for the issue.</description>
+    <label>Project</label>
+    <referenceTo>RallyProject__c</referenceTo>
+    <relationshipLabel>Issues</relationshipLabel>
+    <relationshipName>Issues</relationshipName>
+    <required>true</required>
+    <trackFeedHistory>true</trackFeedHistory>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

@@ -1,0 +1,80 @@
+:host {
+    display: block;
+    position: relative;
+}
+
+.kanban {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1rem;
+    padding: 0 1rem 1rem;
+}
+
+.kanban-column {
+    background: #f3f2f2;
+    border-radius: 0.25rem;
+    min-height: 260px;
+    display: flex;
+    flex-direction: column;
+}
+
+.column-header {
+    font-weight: 600;
+    border-bottom: 1px solid #d4d4d4;
+}
+
+.column-body {
+    flex: 1;
+    padding: 0.5rem;
+}
+
+.issue-card {
+    background: #fff;
+    border-radius: 0.25rem;
+    border: 1px solid #dddbda;
+    padding: 0.5rem;
+    margin-bottom: 0.5rem;
+    cursor: grab;
+}
+
+.issue-key {
+    font-weight: 600;
+    margin-bottom: 0.25rem;
+}
+
+.issue-summary {
+    font-size: 0.85rem;
+    margin-bottom: 0.25rem;
+}
+
+.issue-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    font-size: 0.75rem;
+    color: #706e6b;
+}
+
+.issue-blocked {
+    color: #ba0517;
+    font-size: 0.75rem;
+    margin-top: 0.25rem;
+}
+
+.column-empty {
+    color: #706e6b;
+    font-size: 0.8rem;
+    text-align: center;
+    margin-top: 1rem;
+}
+
+.spinner {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+}
+
+.sprint-details {
+    color: #444;
+    gap: 0.5rem;
+}

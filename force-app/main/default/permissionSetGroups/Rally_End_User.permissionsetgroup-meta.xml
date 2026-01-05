@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PermissionSetGroup xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Bundle baseline access needed for product owners and engineers working in RallyPoint.</description>
+    <label>Rally End User</label>
+    <permissionSets>Rally_Core_App</permissionSets>
+    <permissionSets>Rally_Apex_Service</permissionSets>
+    <permissionSets>Rally_Issue_Work</permissionSets>
+    <permissionSets>Rally_Project_Access</permissionSets>
+    <permissionSets>Rally_Sprint_Access</permissionSets>
+</PermissionSetGroup>

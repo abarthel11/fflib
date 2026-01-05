@@ -1,0 +1,81 @@
+<template>
+    <lightning-card title="Project Kanban" icon-name="standard:work_order">
+        <div class="slds-p-around_medium slds-grid slds-wrap slds-grid_vertical-align-end">
+            <div class="slds-m-right_medium slds-size_1-of-1 slds-large-size_1-of-3">
+                <lightning-combobox
+                    name="project"
+                    label="Project"
+                    placeholder="Select a project"
+                    value={selectedProjectId}
+                    options={projectOptions}
+                    onchange={handleProjectChange}
+                ></lightning-combobox>
+            </div>
+            <lightning-button
+                label="Refresh"
+                onclick={handleRefresh}
+                disabled={isRefreshDisabled}
+            ></lightning-button>
+        </div>
+        <template if:true={showSelectionHint}>
+            <p class="slds-p-horizontal_medium slds-text-color_weak">
+                Select a project to load the Kanban board.
+            </p>
+        </template>
+        <template if:true={showBoard}>
+            <div class="kanban">
+                <template for:each={columns} for:item="column">
+                    <section
+                        key={column.status}
+                        class="kanban-column"
+                        data-status={column.status}
+                        ondragover={handleColumnDragOver}
+                        ondrop={handleDrop}
+                    >
+                        <header class="column-header slds-grid slds-grid_align-spread slds-p-around_small">
+                            <span>{column.status}</span>
+                            <lightning-badge label={column.count}></lightning-badge>
+                        </header>
+                        <div class="column-body">
+                            <template if:true={column.hasIssues}>
+                                <template for:each={column.issues} for:item="issue">
+                                    <article
+                                        key={issue.Id}
+                                        class="issue-card"
+                                        draggable="true"
+                                        data-issue-id={issue.Id}
+                                        ondragstart={handleDragStart}
+                                    >
+                                        <div class="issue-key">{issue.Issue_Key__c}</div>
+                                        <div class="issue-summary">{issue.Summary__c}</div>
+                                        <div class="issue-meta">
+                                            <span>{issue.Issue_Type__c}</span>
+                                            <span>{issue.Priority__c}</span>
+                                            <template if:true={issue.Assignee__r}>
+                                                <span>{issue.Assignee__r.Name}</span>
+                                            </template>
+                                        </div>
+                                        <template if:true={issue.Blocked__c}>
+                                            <div class="issue-blocked">Blocked: {issue.BlockedReason__c}</div>
+                                        </template>
+                                    </article>
+                                </template>
+                            </template>
+                            <template if:false={column.hasIssues}>
+                                <p class="column-empty">No work</p>
+                            </template>
+                        </div>
+                    </section>
+                </template>
+            </div>
+        </template>
+        <template if:true={errorMessage}>
+            <p class="slds-p-horizontal_medium slds-text-color_error">{errorMessage}</p>
+        </template>
+        <template if:true={showSpinner}>
+            <div class="spinner">
+                <lightning-spinner alternative-text="Loading" size="small"></lightning-spinner>
+            </div>
+        </template>
+    </lightning-card>
+</template>

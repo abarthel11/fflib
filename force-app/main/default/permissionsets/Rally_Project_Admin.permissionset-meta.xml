@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PermissionSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Full CRUD access to Rally projects for portfolio leads.</description>
+    <hasActivationRequired>false</hasActivationRequired>
+    <label>Rally Project Admin</label>
+    <objectPermissions>
+        <allowCreate>true</allowCreate>
+        <allowRead>true</allowRead>
+        <allowEdit>true</allowEdit>
+        <allowDelete>true</allowDelete>
+        <modifyAllRecords>true</modifyAllRecords>
+        <viewAllRecords>true</viewAllRecords>
+        <object>RallyProject__c</object>
+    </objectPermissions>
+</PermissionSet>

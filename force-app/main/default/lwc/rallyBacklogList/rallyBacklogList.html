@@ -1,0 +1,48 @@
+<template>
+    <lightning-card title="Rally Backlog" icon-name="standard:task">
+        <div class="slds-p-around_medium slds-grid slds-wrap slds-grid_vertical-align-end">
+            <div class="slds-m-right_medium slds-size_1-of-1 slds-large-size_1-of-3">
+                <lightning-combobox
+                    name="project"
+                    label="Project"
+                    placeholder="Select a project"
+                    value={selectedProjectId}
+                    options={projectOptions}
+                    onchange={handleProjectChange}
+                ></lightning-combobox>
+            </div>
+            <div>
+                <lightning-button
+                    label="Refresh"
+                    variant="neutral"
+                    onclick={handleRefresh}
+                    disabled={isRefreshDisabled}
+                ></lightning-button>
+            </div>
+        </div>
+        <template if:true={showSelectionHint}>
+            <p class="slds-p-horizontal_medium slds-text-color_weak">
+                Choose a project to see its prioritized backlog.
+            </p>
+        </template>
+        <template if:true={showTable}>
+            <div class="slds-p-horizontal_medium slds-p-bottom_medium">
+                <lightning-datatable
+                    key-field="Id"
+                    data={backlog}
+                    columns={columns}
+                    hide-checkbox-column
+                    show-row-number-column
+                ></lightning-datatable>
+            </div>
+        </template>
+        <template if:true={showEmptyState}>
+            <p class="slds-p-horizontal_medium slds-text-color_error">
+                No backlog items were found for the selected project.
+            </p>
+        </template>
+        <template if:true={errorMessage}>
+            <p class="slds-p-horizontal_medium slds-text-color_error">{errorMessage}</p>
+        </template>
+    </lightning-card>
+</template>

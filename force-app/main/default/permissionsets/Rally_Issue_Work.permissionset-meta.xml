@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PermissionSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Create and update Rally issues while keeping delete rights centralized elsewhere.</description>
+    <hasActivationRequired>false</hasActivationRequired>
+    <label>Rally Issue Work</label>
+    <objectPermissions>
+        <allowCreate>true</allowCreate>
+        <allowRead>true</allowRead>
+        <allowEdit>true</allowEdit>
+        <allowDelete>false</allowDelete>
+        <modifyAllRecords>false</modifyAllRecords>
+        <viewAllRecords>false</viewAllRecords>
+        <object>RallyIssue__c</object>
+    </objectPermissions>
+</PermissionSet>

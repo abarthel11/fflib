@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PermissionSetGroup xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Combines all RallyPoint capabilities for admins and release managers.</description>
+    <hasActivationRequired>false</hasActivationRequired>
+    <label>Rally Super User</label>
+    <permissionSets>Rally_Apex_Service</permissionSets>
+    <permissionSets>Rally_Core_App</permissionSets>
+    <permissionSets>Rally_Issue_Admin</permissionSets>
+    <permissionSets>Rally_Issue_Work</permissionSets>
+    <permissionSets>Rally_Project_Access</permissionSets>
+    <permissionSets>Rally_Project_Admin</permissionSets>
+    <permissionSets>Rally_Sprint_Access</permissionSets>
+    <permissionSets>Rally_Sprint_Admin</permissionSets>
+    <status>Updated</status>
+</PermissionSetGroup>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PermissionSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>CRUD access for scrum masters managing Rally sprints.</description>
+    <hasActivationRequired>false</hasActivationRequired>
+    <label>Rally Sprint Admin</label>
+    <objectPermissions>
+        <allowCreate>true</allowCreate>
+        <allowRead>true</allowRead>
+        <allowEdit>true</allowEdit>
+        <allowDelete>true</allowDelete>
+        <modifyAllRecords>true</modifyAllRecords>
+        <viewAllRecords>true</viewAllRecords>
+        <object>RallySprint__c</object>
+    </objectPermissions>
+</PermissionSet>
